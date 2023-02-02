@@ -1,0 +1,59 @@
+﻿@page "/parking/create"
+
+<PageTitle>Create parking</PageTitle>
+
+<EditForm Model="@parkLocation" OnValidSubmit="@CreateParkLocationAsync">
+    <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+            <InputText class="input" @bind-Value="parkLocation.Name" />
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Description</label>
+        <div class="control">
+            <InputTextArea class="textarea" @bind-Value="parkLocation.Description" />
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Fee</label>
+        <div class="control">
+            <InputNumber class="input" @bind-Value="parkLocation.Fee" />
+        </div>
+    </div>
+    
+    <div class="field">
+        <label class="label">Capacity</label>
+        <div class="control">
+            <InputNumber class="input" @bind-Value="parkLocation.Capacity" />
+        </div>
+    </div>
+        
+    <div class="field">
+        <label class="label">Max height</label>
+        <div class="control">
+            <InputNumber class="input" @bind-Value="parkLocation.MaxHeight" />
+        </div>
+    </div>
+        
+    <div class="field">
+        <label class="label">LPG allowed</label>
+        <div class="control">
+            <InputCheckbox class="checkbox" @bind-Value="parkLocation.LpgAllowed" />
+        </div>
+    </div>
+        
+    <div class="field">
+        <label class="label">Has toilets</label>
+        <div class="control">
+            <InputCheckbox class="checkbox" @bind-Value="parkLocation.HasToilets" />
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button class="button is-link is-fullwidth" type="submit">Toevoegen</button>
+        <a href="product" class="button is-link is-light is-fullwidth">Annuleren</a>
+    </div>
+</EditForm>

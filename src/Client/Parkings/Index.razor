@@ -1,0 +1,46 @@
+﻿@page "/parking"
+<PageTitle>Parkings</PageTitle>
+
+
+@if (parkings is null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="columns">
+        <div class="column is-one-quarter">
+            <div class="buttons">
+                <button class="button is-primary is-fullwidth" @onclick="ShowCreateForm">
+                    <span class="icon">
+                        <i class="fas fa-plus"></i>
+                    </span>
+                    <span>Create</span>
+                </button>
+            </div>
+            <h1 class="title is-size-6 is-uppercase has-text-grey">Find a parking</h1>
+          <ParkLocationFilter SearchTerm="@SearchTerm" MaxFee="@MaxFee" />
+        </div>
+        <div class="column">
+            @if (!parkings.Any())
+            {
+                <div class="notification">
+                    No parkings found with these search criteria...
+                </div>
+            }
+            else
+            {
+                <div class="columns is-multiline">
+
+                    @foreach (var parking in parkings)
+                    {
+                        <div class="column is-half">
+                            <ParkLocationListItem ParkLocation="parking"/>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+}
+

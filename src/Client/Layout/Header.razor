@@ -1,0 +1,24 @@
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+            </a>
+
+            <a role="button" @onclick="ToggleMenuDisplay" class="navbar-burger @isOpenClass" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div class="navbar-menu @isOpenClass">
+            <div class="navbar-start">
+                <NavLink class="navbar-item is-tab" href="parking" ActiveClass="is-active">
+                    Park locations
+                </NavLink>
+            </div>
+        <div class="navbar-end">
+            <AccessControl />
+        </div>
+    </div>
+</nav>
